@@ -42,6 +42,11 @@ public class SimpleCalc {
             
             System.out.println(number1 + " - " + number2 + " = " + result);
         }
+        else if (operand.equals("Pow")){
+            result = calculator.Pow(number1, number2);
+
+            System.out.println(number1 + "^" + number2 + " = " + result);
+        }
     }
 
     public static class Calculations {
@@ -59,6 +64,10 @@ public class SimpleCalc {
 
         public float Add(float num1, float num2) {
             return num1 + num2;
+        }
+
+        public float Pow(float num1, float num2) {
+            return (float) Math.pow(num1, num2);
         }
     }
 }
