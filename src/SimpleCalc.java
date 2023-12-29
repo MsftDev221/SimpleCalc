@@ -4,6 +4,8 @@ public class SimpleCalc {
             return;
         }
 
+        Calculations calculator = new Calculations();
+
         String[] splitted_args = args[0].split(" ");
 
         if (splitted_args.length != 3) {
@@ -18,41 +20,45 @@ public class SimpleCalc {
 
         String operand = splitted_args[0];
 
+        float result;
+
         if (operand.equals("Add")) {
-            float result = Add(number1, number2);
+            result = calculator.Add(number1, number2);
 
             System.out.println(number1 + " + " + number2 + " = " + result);
         }
         else if (operand.equals("Mult")){
-            float result = Multiply(number1, number2);
+            result = calculator.Multiply(number1, number2);
 
             System.out.println(number1 + " * " + number2 + " = " + result);
         }
         else if (operand.equals("Div")){
-            float result = Divide(number1, number2);
+            result = calculator.Divide(number1, number2);
 
             System.out.println(number1 + " / " + number2 + " = " + result);
         }
         else if (operand.equals("Sub")) {
-            float result = Subtract(number1, number2);
+            result = calculator.Subtract(number1, number2);
             
             System.out.println(number1 + " - " + number2 + " = " + result);
         }
     }
 
-    public static float Divide(float num1, float num2) {
-        return num1 / num2;
-    }
+    public static class Calculations {
+        public float Divide(float num1, float num2) {
+            return num1 / num2;
+        }
 
-    public static float Multiply(float num1, float num2) {
-        return num1 * num2;
-    }
+        public float Multiply(float num1, float num2) {
+            return num1 * num2;
+        }
 
-    public static float Subtract(float num1, float num2) {
-        return num1 - num2;
-    }
+        public float Subtract(float num1, float num2) {
+            return num1 - num2;
+        }
 
-    public static float Add(float num1, float num2) {
-        return num1 + num2;
+        public float Add(float num1, float num2) {
+            return num1 + num2;
+        }
     }
 }
